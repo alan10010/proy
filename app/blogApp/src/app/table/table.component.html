@@ -1,0 +1,58 @@
+<!--
+<div *ngFor="let photo of photos">
+  <img [src]="photo.thumbnailUrl" alt="">
+  {{photo.id}} && {{photo.title}}
+</div>
+-->
+
+<!--
+<input type="text" placeholder="Image URL" [(ngModel)]="newEquipo[0].img">
+<input type="text" placeholder="Nombre de Equipo" [(ngModel)]="newEquipo[0].name">
+<input type="text" placeholder="Pais del Equipo" [(ngModel)]="newEquipo[0].country">
+<button (click)=addEquipo()>AGREGAR</button><br>
+
+
+<br>
+<table border='3'> 
+  <tr class="primer">
+    <td>EQUIPO</td>
+    <td>PAIS</td>
+    <td>IMAGEN</td>
+    <td>CONTROLES</td>
+  </tr>
+  <tr *ngFor = "let equipo of equipos" class="segundo">
+    <td>{{equipo.name}}</td>
+    <td>{{equipo.country | uppercase | convertToSpace: ''}}</td>
+    <td (click)="setCurrentTeam(equipo)"> <img [src]="equipo.img" width="50px" height="50px"></td>
+    <td> 
+      <button (click) ="updateTeam()">Editar</button>
+      <button (click) ="removeTeam(equipo)">Eliminar</button>
+    </td>
+  </tr>
+</table>
+-->
+<br>
+<table class="hola" border='5'> 
+  <tr class="primer">
+    <td>PRODUCTO</td>
+    <td>IMAGEN</td>
+    <td>PRECIO</td>
+    <td>DESCRIPCIÓN</td>
+    <td>BOTONES</td>
+  </tr>
+  <tr *ngFor = "let equipo of equipos" class="segundo">
+    <td>{{equipo.name}}</td>
+    <td><img [src]="equipo.image" width="90px" height="90px" alt=""></td>
+    <td>{{equipo.precio}}</td>
+    <td>{{equipo.comments}}</td>
+    <td> 
+      <button (click) ="updateTeam()">Editar</button>
+      <button (click) ="removeTeam(equipo)">Eliminar</button>
+    </td>
+  </tr>
+</table>
+
+
+<div>
+<team-description [equipo]='currentTeam'></team-description>
+</div>
