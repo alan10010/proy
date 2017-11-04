@@ -78,6 +78,7 @@ setCurrentTeam(equipo){
   this.currentTeam = equipo;
 }
 
+
   
   ngOnInit():void {
     this._productService.getProducts().subscribe(
@@ -90,6 +91,18 @@ setCurrentTeam(equipo){
 addEquipo():void{
   this.equipos.push(this.newEquipo[0]);
   this.newEquipo = [{img:"",name:"",country:"",description:""}];
+}
+
+addCatalogo():void{
+  this._productService.postProduct(this.newCatalogo[0]).subscribe(
+    )
+}
+
+removeCatalogo(id):void{
+  this._productService.deleteProducts(id).subscribe(
+    photos => this.equipos = photos,
+    error => this.errorMessage = <any>error
+  ); 
 }
 
 }

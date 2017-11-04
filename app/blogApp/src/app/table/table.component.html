@@ -5,6 +5,13 @@
 </div>
 -->
 
+<input type="text" placeholder="Image URL" [(ngModel)]="newCatalogo[0].image">
+<input type="text" placeholder="Nombre de Equipo" [(ngModel)]="newCatalogo[0].name">
+<input type="text" placeholder="Precio" [(ngModel)]="newCatalogo[0].precio">
+<input type="text" placeholder="Descripcion" [(ngModel)]="newCatalogo[0].description">
+<button (click)=addCatalogo()>AGREGAR</button><br>
+
+
 <!--
 <input type="text" placeholder="Image URL" [(ngModel)]="newEquipo[0].img">
 <input type="text" placeholder="Nombre de Equipo" [(ngModel)]="newEquipo[0].name">
@@ -47,7 +54,7 @@
     <td>{{equipo.comments}}</td>
     <td> 
       <button (click) ="updateTeam()">Editar</button>
-      <button (click) ="removeTeam(equipo)">Eliminar</button>
+      <button (click) ="removeCatalogo(equipo._id)">Eliminar Articulo</button>
     </td>
   </tr>
 </table>
