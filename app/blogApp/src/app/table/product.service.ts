@@ -25,8 +25,8 @@ getProducts(): Observable<ITeams[]>{
 }
 
 
-deleteProducts(_id): Observable<ITeams[]>{    
-    return this._http.delete<ITeams[]>(this._url).do(data=>console.log('Data' +JSON.stringify(data))).catch(this.handleError);
+deleteProducts(id:ITeams): Observable<ITeams[]>{    
+    return this._http.delete<ITeams[]>(this._url+"/"+id).do(data=>console.log('Data' +JSON.stringify(data))).catch(this.handleError);
 }
 
 postProduct(body:ICatalogo):Observable<ICatalogo>{
